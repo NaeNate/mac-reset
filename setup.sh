@@ -8,6 +8,9 @@ defaults write com.apple.dock show-recents 0
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 chflags hidden /Users/nate/Applications /Users/nate/Desktop /Users/nate/Documents /Users/nate/Movies /Users/nate/Music /Users/nate/Pictures /Users/nate/Public 
 
+mkdir ~/Code ~/School
+touch ~/.hushlogin
+
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
