@@ -27,7 +27,7 @@ echo "/usr/local/bin/fish
 
 chsh -s /usr/local/bin/fish
 
-fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths"
+fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_greeting"
 
 touch ~/Library/Application\ Support/Code/User/settings.json
 echo `{
@@ -52,7 +52,7 @@ echo `{
   }
 }` | sudo tee ~/Library/Application\ Support/Code/User/settings.json
 
-for extension in bungcip.better-toml esbenp.prettier-vscode matklad.rust-analyzer PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme
+for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme
   do code --install-extension $extension
 done
 
