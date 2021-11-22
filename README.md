@@ -8,5 +8,4 @@ TODO:
   - I'd like to do this with brew but I'm not seeing a great way to do so
 - Install chrome extensions
   - Dunno if thats a thing
-- Turn off fish greeting
 - Goodr fish prompt
