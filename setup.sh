@@ -1,18 +1,7 @@
 #! /bin/bash
 
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 1000
-defaults write com.apple.dock no-bouncing -bool TRUE
-defaults write com.apple.dock persistent-apps "()"
-defaults write com.apple.dock show-recents 0
-
-mkdir ~/Code ~/School
-sudo touch ~/.hushlogin
-
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 brew install --cask google-chrome
 brew install --cask homebrew/cask-drivers/steelseries-exactmouse-tool
@@ -48,7 +37,9 @@ echo "/usr/local/bin/fish
 /bin/zsh" | sudo tee /etc/shells
 chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_greeting"
-touch ~/.config/fish/functions/nvm.fish
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 fisher add edc/bass
 
@@ -56,5 +47,14 @@ echo "function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end" | tee ~/.config/fish/functions/nvm.fish
 nvm install node
+
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 1000
+defaults write com.apple.dock no-bouncing -bool TRUE
+defaults write com.apple.dock persistent-apps "()"
+defaults write com.apple.dock show-recents 0
+
+mkdir ~/Code ~/School
+touch ~/.hushlogin
 
 chflags hidden /Users/nate/Applications /Users/nate/Desktop /Users/nate/Documents /Users/nate/Movies /Users/nate/Music /Users/nate/Pictures /Users/nate/Public 
