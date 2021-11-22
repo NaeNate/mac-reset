@@ -7,7 +7,7 @@ defaults write com.apple.dock persistent-apps "()"
 defaults write com.apple.dock show-recents 0
 
 mkdir ~/Code ~/School
-touch ~/.hushlogin
+sudo touch ~/.hushlogin
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
