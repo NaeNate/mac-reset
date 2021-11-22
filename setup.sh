@@ -5,8 +5,6 @@ defaults write com.apple.dock no-bouncing -bool TRUE
 defaults write com.apple.dock persistent-apps "()"
 defaults write com.apple.dock show-recents 0
 
-chflags hidden /Users/nate/Applications /Users/nate/Desktop /Users/nate/Documents /Users/nate/Movies /Users/nate/Music /Users/nate/Pictures /Users/nate/Public 
-
 mkdir ~/Code ~/School
 touch ~/.hushlogin
 
@@ -57,3 +55,5 @@ echo "function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end" | tee ~/.config/fish/functions/nvm.fish
 nvm install node
+
+chflags hidden /Users/nate/Applications /Users/nate/Desktop /Users/nate/Documents /Users/nate/Movies /Users/nate/Music /Users/nate/Pictures /Users/nate/Public 
