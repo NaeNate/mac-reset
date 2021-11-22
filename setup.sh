@@ -9,8 +9,6 @@ chflags hidden /Users/nate/Applications /Users/nate/Desktop /Users/nate/Document
 
 mkdir ~/Code ~/School
 touch ~/.hushlogin
-# touch ~/Library/Application\ Support/Code/User/settings.json
-# touch ~/.config/fish/functions/nvm.fish
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
@@ -51,6 +49,7 @@ echo "/usr/local/bin/fish
 /bin/zsh" | tee /etc/shells
 chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_greeting"
+touch ~/.config/fish/functions/nvm.fish
 
 fisher add edc/bass
 
