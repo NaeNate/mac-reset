@@ -7,3 +7,4 @@ TODO:
 - Install chrome extensions
   - Dunno if thats a thing
 - Goodr fish prompt
+- nvm als;kdfj;asdfh;alkshf
