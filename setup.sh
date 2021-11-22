@@ -45,7 +45,7 @@ done
 brew install fish
 echo "/usr/local/bin/fish
 /bin/bash
-/bin/zsh" | tee /etc/shells
+/bin/zsh" | sudo tee /etc/shells
 chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_greeting"
 touch ~/.config/fish/functions/nvm.fish
