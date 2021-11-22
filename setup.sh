@@ -5,12 +5,12 @@ defaults write com.apple.dock no-bouncing -bool TRUE
 defaults write com.apple.dock persistent-apps "()"
 defaults write com.apple.dock show-recents 0
 
-chflags hidden ~/Applications ~/Desktop ~/Documents ~/Movies ~/Music ~/Pictures ~/Public 
+chflags hidden /Users/nate/Applications /Users/nate/Desktop /Users/nate/Documents /Users/nate/Movies /Users/nate/Music /Users/nate/Pictures /Users/nate/Public 
 
 mkdir ~/Code ~/School
 touch ~/.hushlogin
-touch ~/Library/Application\ Support/Code/User/settings.json
-touch ~/.config/fish/functions/nvm.fish
+# touch ~/Library/Application\ Support/Code/User/settings.json
+# touch ~/.config/fish/functions/nvm.fish
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
