@@ -50,3 +50,5 @@ chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting"
 
 brew install node
+
+brew install git
