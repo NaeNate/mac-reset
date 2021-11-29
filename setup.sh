@@ -9,14 +9,13 @@ defaults write com.apple.dock show-recents 0
 mkdir ~/Code ~/School
 sudo touch ~/.hushlogin
 
-chflags hidden /Users/nate/Desktop /Users/nate/Documents /Users/nate/Movies /Users/nate/Music /Users/nate/Pictures /Users/nate/Public 
+sudo rm -rf ~/Movies ~/Music ~/Public ~/Pictures ~/Documents
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install --cask google-chrome
-brew install --cask homebrew/cask-drivers/steelseries-exactmouse-tool
-brew install --cask tor-browser
+# brew install --cask homebrew/cask-drivers/steelseries-exactmouse-tool
 
 brew install --cask visual-studio-code 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
@@ -36,7 +35,7 @@ echo "{
     \"**/package-lock.json\": true,
     \"**/yarn.lock\": true
   }
-}" | tee ~/Library/Application\ Support/Code/User/settings.json
+}" | tee "~/Library/Application\ Support/Code/User/settings.json"
 
 for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme
   do code --install-extension $extension
