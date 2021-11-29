@@ -19,23 +19,23 @@ brew install --cask google-chrome
 
 brew install --cask visual-studio-code 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-echo "{
-  \"workbench.colorTheme\": \"One Dark Pro\",
-  \"workbench.iconTheme\": \"material-icon-theme\",
-  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
-  \"editor.formatOnSave\": true,
-  \"editor.tabSize\": 4,
-  \"editor.minimap.enabled\": false,
-  \"workbench.startupEditor\": \"none\",
-  \"explorer.confirmDelete\": false,
-  \"terminal.integrated.defaultProfile.osx\": \"fish\",
-  // \"terminal.integrated.defaultProfile.osx\": \"bash\",
-  \"files.exclude\": {
-    \"**/node_modules\": true,
-    \"**/package-lock.json\": true,
-    \"**/yarn.lock\": true
-  }
-}" | tee "~/Library/Application\ Support/Code/User/settings.json"
+# echo "{
+#   \"workbench.colorTheme\": \"One Dark Pro\",
+#   \"workbench.iconTheme\": \"material-icon-theme\",
+#   \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
+#   \"editor.formatOnSave\": true,
+#   \"editor.tabSize\": 4,
+#   \"editor.minimap.enabled\": false,
+#   \"workbench.startupEditor\": \"none\",
+#   \"explorer.confirmDelete\": false,
+#   \"terminal.integrated.defaultProfile.osx\": \"fish\",
+#   // \"terminal.integrated.defaultProfile.osx\": \"bash\",
+#   \"files.exclude\": {
+#     \"**/node_modules\": true,
+#     \"**/package-lock.json\": true,
+#     \"**/yarn.lock\": true
+#   }
+# }" | tee "~/Library/Application\ Support/Code/User/settings.json"
 
 for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme
   do code --install-extension $extension
@@ -47,6 +47,10 @@ echo "/usr/local/bin/fish
 /bin/zsh" | sudo tee /etc/shells
 chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && fish_vi_key_bindings"
+
+# echo "function fish_prompt
+#     echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) ">"
+# end" | tee "./config/fish/functions/fish_prompt.fish"
 
 brew install node
 
