@@ -47,7 +47,7 @@ echo "/usr/local/bin/fish
 /bin/bash
 /bin/zsh" | sudo tee /etc/shells
 chsh -s /usr/local/bin/fish
-fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting"
+fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && fish_vi_key_bindings"
 
 brew install node
 
