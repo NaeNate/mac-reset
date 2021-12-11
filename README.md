@@ -4,8 +4,6 @@
 
 TODO:
 
-- Goodr fish prompt,
 - Install and setup nvm,
-- Fix VSCode settings command,
 - Flip scroll direction,
 - Modifier Keys
