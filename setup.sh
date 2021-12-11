@@ -16,10 +16,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 brew install --cask google-chrome
 # brew install --cask homebrew/cask-drivers/steelseries-exactmouse-tool
 
-brew install --cask visual-studio-code 
+brew install --cask visual-studio-code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 mkdir -p ~/Downloads/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
- echo "{
+echo "{
    \"workbench.colorTheme\": \"One Dark Pro\",
    \"workbench.iconTheme\": \"material-icon-theme\",
    \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
@@ -31,7 +31,6 @@ mkdir -p ~/Downloads/"Application Support"/Code/User && touch ~/Library/"Applica
    \"explorer.confirmDelete\": false,
    \"terminal.integrated.defaultProfile.osx\": \"fish\",
    // \"terminal.integrated.defaultProfile.osx\": \"bash\",
-   
    \"files.exclude\": {
      \"**/node_modules\": true,
      \"**/package-lock.json\": true,
@@ -40,10 +39,10 @@ mkdir -p ~/Downloads/"Application Support"/Code/User && touch ~/Library/"Applica
   \"[rust]\": {
     \"editor.defaultFormatter\": \"rust-lang.rust\"
   }
- }" | tee "~/Library/Application\ Support/Code/User/settings.json"
+}" | tee "~/Library/Application\ Support/Code/User/settings.json"
 
 for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme rust-lang.rust
-  do code --install-extension $extension
+do code --install-extension $extension
 done
 
 brew install fish
@@ -51,7 +50,7 @@ echo "/usr/local/bin/fish
 /bin/bash
 /bin/zsh" | sudo tee /etc/shells
 chsh -s /usr/local/bin/fish
-fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths" 
+fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths"
 fish -c "set -U fish_greeting"
 fish -c "fish_vi_key_bindings"
 
@@ -66,5 +65,5 @@ npm i -g yarn nodemon
 
 brew install git
 
-chflags hidden /Users/nate/Desktop /Users/nate/Documents/ /Users/nate/Pictures/ /Users/nate/Movies /Users/nate/Music /Users/nate/Public /Users/nate/Documents
+chflags hidden ~/Desktop ~/Documents/ ~/Pictures/ ~/Movies ~/Music ~/Public ~/Documents
 sudo rm -rf ~/Movies ~/Music ~/Public
