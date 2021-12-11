@@ -66,4 +66,5 @@ npm i -g yarn nodemon
 
 brew install git
 
-sudo rm -rf ~/Movies ~/Music ~/Public ~/Pictures ~/Documents
+chflags hidden /Users/nate/Desktop /Users/nate/Documents/ /Users/nate/Pictures/ /Users/nate/Movies /Users/nate/Music /Users/nate/Public /Users/nate/Documents
+sudo rm -rf ~/Movies ~/Music ~/Public
