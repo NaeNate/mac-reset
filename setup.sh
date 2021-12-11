@@ -18,7 +18,7 @@ brew install --cask google-chrome
 
 brew install --cask visual-studio-code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-mkdir -p ~/Downloads/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
+mkdir -p ~/Library/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
 echo "{
    \"workbench.colorTheme\": \"One Dark Pro\",
    \"workbench.iconTheme\": \"material-icon-theme\",
@@ -39,7 +39,7 @@ echo "{
   \"[rust]\": {
     \"editor.defaultFormatter\": \"rust-lang.rust\"
   }
-}" | tee "~/Library/Application\ Support/Code/User/settings.json"
+}" | tee ~/Library/"Application Support"/Code/User/settings.json
 
 for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme rust-lang.rust
 do code --install-extension $extension
@@ -58,7 +58,7 @@ mkdir -p ~/.config/fish/functions && touch ~/.config/fish/functions/fish_prompt.
 
 echo "function fish_prompt
   echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) ">"
-end" | tee "./config/fish/functions/fish_prompt.fish"
+end" | tee ~/config/fish/functions/fish_prompt.fish
 
 brew install node
 npm i -g yarn nodemon
