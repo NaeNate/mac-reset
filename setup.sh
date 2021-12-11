@@ -18,7 +18,7 @@ brew install --cask google-chrome
 
 brew install --cask visual-studio-code 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-mkdir -p "/Users/nate/Library/Application\ Support/Code/User" && touch ~/Library/Application\ Support/Code/User/settings.json
+mkdir -p ~/Downloads/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
  echo "{
    \"workbench.colorTheme\": \"One Dark Pro\",
    \"workbench.iconTheme\": \"material-icon-theme\",
@@ -55,11 +55,11 @@ fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths"
 fish -c "set -U fish_greeting"
 fish -c "fish_vi_key_bindings"
 
-touch ~/.config/fish/functions/fish_prompt.fish
+mkdir -p ~/.config/fish/functions && touch ~/.config/fish/functions/fish_prompt.fish
 
- echo "function fish_prompt
-     echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) ">"
- end" | tee "./config/fish/functions/fish_prompt.fish"
+echo "function fish_prompt
+  echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) ">"
+end" | tee "./config/fish/functions/fish_prompt.fish"
 
 brew install node
 npm i -g yarn nodemon
