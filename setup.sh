@@ -58,6 +58,7 @@ touch "~/.config/fish/functions/fish_prompt.fish"
  end" | tee "./config/fish/functions/fish_prompt.fish"
 
 brew install node
+npm i -g yarn nodemon
 
 brew install git
 
