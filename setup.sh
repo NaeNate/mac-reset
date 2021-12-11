@@ -35,10 +35,13 @@ mkdir -p "/Users/nate/Library/Application\ Support/Code/User" && touch "~/Librar
      \"**/node_modules\": true,
      \"**/package-lock.json\": true,
      \"**/yarn.lock\": true
-   }
+   },
+  \"[rust]\": {
+    \"editor.defaultFormatter\": \"rust-lang.rust\"
+  }
  }" | tee "~/Library/Application\ Support/Code/User/settings.json"
 
-for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme
+for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme rust-lang.rust
   do code --install-extension $extension
 done
 
