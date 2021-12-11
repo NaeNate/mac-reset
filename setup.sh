@@ -5,6 +5,7 @@ defaults write com.apple.dock autohide-delay -float 1000
 defaults write com.apple.dock no-bouncing -bool TRUE
 defaults write com.apple.dock persistent-apps "()"
 defaults write com.apple.dock show-recents 0
+defaults write com.apple.dock wvous-br-corner 1
 
 mkdir ~/Code ~/School
 sudo touch ~/.hushlogin
