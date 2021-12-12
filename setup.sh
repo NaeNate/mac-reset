@@ -6,6 +6,7 @@ defaults write com.apple.dock no-bouncing -bool TRUE
 defaults write com.apple.dock persistent-apps "()"
 defaults write com.apple.dock show-recents 0
 defaults write com.apple.dock wvous-br-corner 1
+killall Dock
 
 mkdir ~/Code ~/School
 sudo touch ~/.hushlogin
@@ -50,15 +51,13 @@ echo "/usr/local/bin/fish
 /bin/bash
 /bin/zsh" | sudo tee /etc/shells
 chsh -s /usr/local/bin/fish
-fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths"
-fish -c "set -U fish_greeting"
-fish -c "fish_vi_key_bindings"
+fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_key_bindings fish_vi_key_bindings"
 
 mkdir -p ~/.config/fish/functions && touch ~/.config/fish/functions/fish_prompt.fish
 
 echo "function fish_prompt
   echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) ">"
-end" | tee ~/config/fish/functions/fish_prompt.fish
+end" | tee ~/.config/fish/functions/fish_prompt.fish
 
 brew install node
 npm i -g yarn nodemon
