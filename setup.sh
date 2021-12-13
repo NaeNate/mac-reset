@@ -22,21 +22,22 @@ brew install --cask visual-studio-code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 mkdir -p ~/Library/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
 echo "{
-   \"workbench.colorTheme\": \"One Dark Pro\",
-   \"workbench.iconTheme\": \"material-icon-theme\",
-   \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
-   \"editor.formatOnSave\": true,
-   \"editor.minimap.enabled\": false,
-   \"editor.tabSize\": 4,
-   \"window.zoomLevel\": 1,
-   \"workbench.startupEditor\": \"none\",
-   \"explorer.confirmDelete\": false,
-   \"terminal.integrated.defaultProfile.osx\": \"fish\",
-   // \"terminal.integrated.defaultProfile.osx\": \"bash\",
-   \"files.exclude\": {
-     \"**/node_modules\": true,
-     \"**/package-lock.json\": true,
-     \"**/yarn.lock\": true
+  \"workbench.colorTheme\": \"One Dark Pro\",
+  \"workbench.iconTheme\": \"material-icon-theme\",
+  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
+  \"editor.formatOnSave\": true,
+  \"editor.minimap.enabled\": false,
+  \"editor.tabSize\": 4,
+  \"window.zoomLevel\": 1,
+  \"workbench.startupEditor\": \"none\",
+  \"explorer.confirmDelete\": false,
+  \"terminal.integrated.defaultProfile.osx\": \"fish\",
+  // \"terminal.integrated.defaultProfile.osx\": \"bash\",
+  \"files.exclude\": {
+    \"**/node_modules\": true,
+    \"**/package-lock.json\": true,
+    \"**/yarn.lock\": true,
+    \"**/.next\": true
    },
   \"[rust]\": {
     \"editor.defaultFormatter\": \"rust-lang.rust\"
