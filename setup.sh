@@ -56,12 +56,10 @@ chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_key_bindings fish_vi_key_bindings"
 
 brew install node
-npm i -g yarn nodemon
+npm i -g yarn nodemon http-server
 
 brew install git
-
 brew install mkcert
-
 brew install 1password
 
 chflags hidden ~/Desktop ~/Documents/ ~/Pictures/ ~/Movies ~/Music ~/Public ~/Documents
