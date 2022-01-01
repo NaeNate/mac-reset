@@ -21,30 +21,9 @@ brew install --cask google-chrome
 brew install --cask visual-studio-code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 mkdir -p ~/Library/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
-echo "{
-  \"workbench.colorTheme\": \"One Dark Pro\",
-  \"workbench.iconTheme\": \"material-icon-theme\",
-  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
-  \"editor.formatOnSave\": true,
-  \"editor.minimap.enabled\": false,
-  \"editor.tabSize\": 4,
-  \"window.zoomLevel\": 1,
-  \"workbench.startupEditor\": \"none\",
-  \"explorer.confirmDelete\": false,
-  \"terminal.integrated.defaultProfile.osx\": \"fish\",
-  // \"terminal.integrated.defaultProfile.osx\": \"bash\",
-  \"files.exclude\": {
-    \"**/node_modules\": true,
-    \"**/package-lock.json\": true,
-    \"**/yarn.lock\": true,
-    \"**/.next\": true
-   },
-  \"[rust]\": {
-    \"editor.defaultFormatter\": \"rust-lang.rust\"
-  }
-}" | tee ~/Library/"Application Support"/Code/User/settings.json
+echo "{\"workbench.colorTheme\":\"OneDarkPro\",\"workbench.iconTheme\":\"material-icon-theme\",\"workbench.startupEditor\":\"none\",\"terminal.integrated.defaultProfile.osx\":\"fish\",\"editor.defaultFormatter\":\"esbenp.prettier-vscode\",\"editor.tabSize\":2,\"editor.formatOnSave\":true,\"editor.minimap.enabled\":false,\"editor.lightbulb.enabled\":false,\"explorer.confirmDelete\":false,\"explorer.confirmDragAndDrop\":false,\"javascript.suggest.paths\":false,\"liveServer.settings.host\":\"localhost\",\"liveServer.settings.port\":3000,\"liveServer.settings.donotShowInfoMsg\":true,\"[rust]\":{\"editor.defaultFormatter\":\"matklad.rust-analyzer\"},\"[html]\":{\"editor.defaultFormatter\":\"vscode.html-language-features\"},\"files.exclude\":{\"**/Cargo.lock\":true,\"**/target\":true,\"**/node_modules\":true,\"**/yarn.lock\":true,\"**/pages/_app.js\":true,\"**/.next\":true}}" | tee ~/Library/"Application Support"/Code/User/settings.json
 
-for extension in esbenp.prettier-vscode PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme rust-lang.rust
+for extension in bungcip.better-toml christian-kohler.path-intellisense esbenp.prettier-vscode matklad.rust-analyzer PKief.material-icon-theme ritwickdey.LiveServer vadimcn.vscode-lldb vscodevim.vim zhuangtongfa.material-theme
 do code --install-extension $extension
 done
 
@@ -56,10 +35,8 @@ chsh -s /usr/local/bin/fish
 fish -c "set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths && set -U fish_greeting && set -U fish_key_bindings fish_vi_key_bindings"
 
 brew install node
-npm i -g yarn nodemon http-server
+npm i -g yarn nodemon typescript
 
-brew install git
-brew install mkcert
-brew install 1password
+brew install git mkcert 1password
 
-chflags hidden ~/Desktop ~/Documents/ ~/Pictures/ ~/Movies ~/Music ~/Public ~/Documents
+chflags hidden ~/Desktop ~/Pictures/
