@@ -72,11 +72,14 @@ mkdir -p ~/.config/fish/functions && touch ~/.config/fish/functions/fish_prompt.
 echo "function fish_prompt 
   echo -n -s (set_color \$fish_color_cwd) (prompt_pwd) (set_color normal) \">\" 
 end" | tee ~/.config/fish/functions/fish_prompt.fish
-
+touch ~/.config/fish/functions/jf.fish
+echo "function jf --wraps='ls -A' --description 'alias jf ls -A'
+  ls -A \$argv; 
+end" | tee ~/.config/fish/functions/jf.fish
 
 brew install node
 npm i -g yarn nodemon
 
-brew install git mkcert 1password
+brew install git 1password
 
-chflags hidden ~/Desktop ~/Pictures/ ~/Movies ~/Music
+rm -rf ~/Movies ~/Music ~/Applications ~/Public
