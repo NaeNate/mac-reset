@@ -7,3 +7,4 @@ TODO:
 - Install and setup nvm,
 - Flip scroll direction,
 - Modifier Keys
+- Chrome extensions?
