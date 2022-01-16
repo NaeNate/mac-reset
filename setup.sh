@@ -5,9 +5,8 @@ defaults write com.apple.dock autohide-delay -float 1000
 defaults write com.apple.dock no-bouncing -bool TRUE
 defaults write com.apple.dock persistent-apps "()"
 defaults write com.apple.dock show-recents 0
-killall Dock
 defaults write com.apple.dock wvous-br-corner 1
-defaults write "Apple Global Domain" com.apple.swipescrolldirection 0
+killall Dock
 
 mkdir ~/Code ~/School
 sudo touch ~/.hushlogin
@@ -21,44 +20,9 @@ brew install --cask google-chrome
 brew install --cask visual-studio-code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 mkdir -p ~/Library/"Application Support"/Code/User && touch ~/Library/"Application Support"/Code/User/settings.json
-echo "{
-  \"workbench.colorTheme\": \"One Dark Pro\",
-  \"workbench.iconTheme\": \"material-icon-theme\",
-  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",
-  \"editor.formatOnSave\": true,
-  \"editor.parameterHints.enabled\": false,
-  \"editor.hover.delay\": 1200,
-  \"editor.snippetSuggestions\": \"none\",
-  \"editor.tabSize\": 2,
-  \"editor.minimap.enabled\": false,
-  \"editor.lightbulb.enabled\": false,
-  \"editor.bracketPairColorization.enabled\": true,
-  \"editor.guides.bracketPairs\": \"active\",
-  \"terminal.integrated.defaultProfile.osx\": \"fish\",
-  \"javascript.suggest.paths\": false,
-  \"typescript.suggest.paths\": false,
-  \"liveServer.settings.host\": \"localhost\",
-  \"liveServer.settings.port\": 3000,
-  \"explorer.confirmDelete\": false,
-  \"workbench.startupEditor\": \"none\",
-  \"files.exclude\": {
-    \"**/Cargo.lock\": true,
-    \"**/node_modules\": true,
-    \"**/package-lock.json\": true,
-    \"**/yarn.lock\": true,
-    \"**/.next\": true,
-    \"**/_app.js\": true,
-    \"**/next-env.d.ts\": true
-  },
-  \"[rust]\": {
-    \"editor.defaultFormatter\": \"matklad.rust-analyzer\"
-  },
-  \"emmet.showExpandedAbbreviation\": \"never\",
-  \"explorer.confirmDragAndDrop\": false
-}
-" | tee ~/Library/"Application Support"/Code/User/settings.json
+echo "" | tee ~/Library/"Application Support"/Code/User/settings.json
 
-for extension in bungcip.better-toml christian-kohler.path-intellisense esbenp.prettier-vscode matklad.rust-analyzer PKief.material-icon-theme ritwickdey.LiveServer vadimcn.vscode-lldb vscodevim.vim zhuangtongfa.material-theme
+for extension in bungcip.better-toml christian-kohler.path-intellisense esbenp.prettier-vscode matklad.rust-analyzer PKief.material-icon-theme ritwickdey.LiveServer vscodevim.vim zhuangtongfa.material-theme
 do code --install-extension $extension
 done
 
@@ -78,8 +42,6 @@ echo "function jf --wraps='ls -A' --description 'alias jf ls -A'
 end" | tee ~/.config/fish/functions/jf.fish
 
 brew install node
-npm i -g yarn nodemon
+npm i -g yarn nodemon npm
 
 brew install git 1password
-
-rm -rf ~/Movies ~/Music ~/Applications ~/Public
